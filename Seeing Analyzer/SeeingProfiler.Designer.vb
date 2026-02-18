@@ -47,6 +47,7 @@ Partial Class SeeingProfiler
         Me.ActMagLabel = New System.Windows.Forms.Label()
         Me.XLabel = New System.Windows.Forms.Label()
         Me.YLabel = New System.Windows.Forms.Label()
+        Me.MaxADULabel = New System.Windows.Forms.Label()
         CType(Me.MagChart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -144,7 +145,7 @@ Partial Class SeeingProfiler
         'RALabel
         '
         Me.RALabel.AutoSize = True
-        Me.RALabel.Location = New System.Drawing.Point(288, 475)
+        Me.RALabel.Location = New System.Drawing.Point(325, 475)
         Me.RALabel.Name = "RALabel"
         Me.RALabel.Size = New System.Drawing.Size(40, 13)
         Me.RALabel.TabIndex = 10
@@ -218,7 +219,7 @@ Partial Class SeeingProfiler
         Me.AnalyzeButton.Size = New System.Drawing.Size(75, 23)
         Me.AnalyzeButton.TabIndex = 0
         Me.AnalyzeButton.Text = "Analyze"
-        Me.AnalysisToolTips.SetToolTip(Me.AnalyzeButton, "Run Image LInk on currently active TSX image, then" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "compute seeing characteristic" & _
+        Me.AnalysisToolTips.SetToolTip(Me.AnalyzeButton, "Run Image LInk on currently active TSX image, then" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "compute seeing characteristic" &
         "s and display magnitude" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "graph of starting with star with greatest magnitude.")
         Me.AnalyzeButton.UseVisualStyleBackColor = True
         '
@@ -229,7 +230,7 @@ Partial Class SeeingProfiler
         Me.ReadMeButton.Size = New System.Drawing.Size(75, 23)
         Me.ReadMeButton.TabIndex = 17
         Me.ReadMeButton.Text = "Read Me"
-        Me.AnalysisToolTips.SetToolTip(Me.ReadMeButton, "Run Image LInk on currently active TSX image, then" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "compute seeing characteristic" & _
+        Me.AnalysisToolTips.SetToolTip(Me.ReadMeButton, "Run Image LInk on currently active TSX image, then" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "compute seeing characteristic" &
         "s and display magnitude" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "graph of starting with star with greatest magnitude.")
         Me.ReadMeButton.UseVisualStyleBackColor = True
         '
@@ -241,7 +242,7 @@ Partial Class SeeingProfiler
         Me.ActMagLabel.Size = New System.Drawing.Size(91, 13)
         Me.ActMagLabel.TabIndex = 18
         Me.ActMagLabel.Text = "Actual Mag =       "
-        Me.AnalysisToolTips.SetToolTip(Me.ActMagLabel, "How far off the TSX Magnitude Zero Point setting is" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "from the value it should hav" & _
+        Me.AnalysisToolTips.SetToolTip(Me.ActMagLabel, "How far off the TSX Magnitude Zero Point setting is" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "from the value it should hav" &
         "e such that the calculated" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "magnitude value is the same as the cateloged value.")
         '
         'XLabel
@@ -264,11 +265,23 @@ Partial Class SeeingProfiler
         Me.YLabel.Text = "Y =   "
         Me.AnalysisToolTips.SetToolTip(Me.YLabel, "Y position of selected star image")
         '
+        'MaxADULabel
+        '
+        Me.MaxADULabel.AutoSize = True
+        Me.MaxADULabel.Location = New System.Drawing.Point(191, 475)
+        Me.MaxADULabel.Name = "MaxADULabel"
+        Me.MaxADULabel.Size = New System.Drawing.Size(83, 13)
+        Me.MaxADULabel.TabIndex = 21
+        Me.MaxADULabel.Text = "Max ADU =       "
+        Me.AnalysisToolTips.SetToolTip(Me.MaxADULabel, "How far off the TSX Magnitude Zero Point setting is" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "from the value it should hav" &
+        "e such that the calculated" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "magnitude value is the same as the cateloged value.")
+        '
         'SeeingProfiler
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(524, 540)
+        Me.Controls.Add(Me.MaxADULabel)
         Me.Controls.Add(Me.YLabel)
         Me.Controls.Add(Me.XLabel)
         Me.Controls.Add(Me.ActMagLabel)
@@ -315,5 +328,5 @@ Partial Class SeeingProfiler
     Friend WithEvents ActMagLabel As System.Windows.Forms.Label
     Friend WithEvents XLabel As System.Windows.Forms.Label
     Friend WithEvents YLabel As System.Windows.Forms.Label
-
+    Friend WithEvents MaxADULabel As Label
 End Class

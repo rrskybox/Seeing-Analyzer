@@ -20,11 +20,15 @@
 '                       Fixed a bug where I left in a stub for a DSS issue
 '                       Changed Inst Mag to Mag Zero Pt Offset which is how far off
 '                           the TSX Magnitude Zero Point setting is from where it should be.
+'                       Added a check for saturation of the star image 
+'               Rev 2.0 Updated for TSX 10.5, which has a new ImageLink method (InsertWCS) and new InventoryArray functions
+'                       And -- published for x64 onle
 '
 ' Date			Who	Vers	Description
 ' -----------	---	-----	-------------------------------------------------------
 ' 02-18-2015	REM	1.0.0	Initial version
 ' 08-12-2017    REM 1.2.1   Fixes above
+' 02-18-2024    REM 2.0.0   Updated for TSX 10.5, which has a new ImageLink method (InsertWCS) and new InventoryArray functions
 ' ---------------------------------------------------------------------------------
 '
 
@@ -103,8 +107,8 @@ Public Class SeeingProfiler
 
         Dim ferr As Integer
 
-        tsximg = CreateObject("TheSkyX.ccdsoftImage")
-        tsxilk = CreateObject("TheSkyX.ImageLink")
+        tsximg = CreateObject("TheSky64.ccdsoftImage")
+        tsxilk = CreateObject("TheSky64.ImageLink")
 
         'Attach to current active image in TSX, if any -- prompt if not
         Try
@@ -297,14 +301,14 @@ Public Class SeeingProfiler
         Dim XCen = XPosArr(StarSort(StarSortId))
         'Dim YCen = YMax - YPosArr(StarSort(StarSortId))  'Stub for simulator
         Dim YCen = YPosArr(StarSort(StarSortId))
-        Dim Width = FWHMArr(StarSort(StarSortId)) * 2
+        Dim Width As Integer = FWHMArr(StarSort(StarSortId)) * 2
 
         'Calculate the lowest and highest X positions for twice the FWHM
-        Dim Pix0 = XCen - (Width / 2)
+        Dim Pix0 As Integer = XCen - (Width / 2)
         If Pix0 < 0 Then
             Pix0 = 0
         End If
-        Dim PixN = XCen + (Width / 2)
+        Dim PixN As Integer = XCen + (Width / 2)
         If PixN > XMax Then
             PixN = XMax
         End If
@@ -318,6 +322,7 @@ Public Class SeeingProfiler
         FWHMLabel.Text = "FWHM = " + Str(Math.Round(FWHMArr(StarSort(StarSortId)), 2))
         EllipseLabel.Text = "Ellpse = " + Str(Math.Round(EllipseArr(StarSort(StarSortId)), 2))
         ResolutionLabel.Text = "Resolution (ArcSec/PIx) = " + Str(Math.Round(tsximg.ScaleInArcsecondsPerPixel, 2))
+        ' MaxADULabel.Text = "Max ADU = "+ Str(Math.Round(tsximg.,2))
 
         'Display X and Y pixel data
         XLabel.Text = "X = " + Str(Int(XPosArr(StarSort(StarSortId))))
@@ -344,6 +349,7 @@ Public Class SeeingProfiler
         '  making sure to cut off any excursion either below 0 or about the X or Y ranges
         '
         'So... for a 2XFWHM number of data series,
+        Dim maxADU As Integer = 0
         For i = 0 To Width - 1
             'Create a series object and attach it to the graph
             Ypix(i) = New Series(Str(i))
@@ -357,6 +363,11 @@ Public Class SeeingProfiler
                         SaturationLabel.Text = "Saturated"
                         SaturationLabel.BackColor = Color.LightCoral
                     End If
+                    If i = Math.Floor(Width / 2) Then
+                        If j = Math.Floor(PixN - (PixN - Pix0) / 2) Then
+                            maxADU = Yline(j)
+                        End If
+                    End If
                     Ypix(i).Points.Add(Yline(j))
                 End If
             Next
@@ -369,6 +380,9 @@ Public Class SeeingProfiler
             'Ypix(i).Color = Color.Black
             Ypix(i).MarkerStyle = MarkerStyle.Circle
         Next
+        'set the maximum ADU as the value at the center
+
+        MaxADULabel.Text = "Max ADU = " + maxADU.ToString("0")
         'All done
         Return
     End Sub
@@ -398,9 +412,9 @@ Public Class SeeingProfiler
         'Find the star on the chart and access it's object information, in particular for apparent magnitude
         Dim actMag As Double
 
-        Dim tsxsc = CreateObject("TheSkyX.sky6StarChart")
-        Dim tsxod = CreateObject("TheSkyX.sky6ObjectInformation")
-        Dim tsxut = CreateObject("TheSkyX.sky6Utils")
+        Dim tsxsc = CreateObject("TheSky64.sky6StarChart")
+        Dim tsxod = CreateObject("TheSky64.sky6ObjectInformation")
+        Dim tsxut = CreateObject("TheSky64.sky6Utils")
 
         'Ultimately, we want to center the star chart on the FOV of the image,
         '  but not resize the chart
@@ -418,7 +432,7 @@ Public Class SeeingProfiler
 
         tsxsc.ClickFind(Xcen, Ycen)
 
-        tsxod.Property(TheSkyXLib.Sk6ObjectInformationProperty.sk6ObjInfoProp_MAG)
+        tsxod.Property(TheSky64Lib.Sk6ObjectInformationProperty.sk6ObjInfoProp_MAG)
         actMag = tsxod.ObjInfoPropOut()
 
         'Now recenter the star chart on the center of the image
