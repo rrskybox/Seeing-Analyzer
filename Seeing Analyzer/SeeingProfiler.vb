@@ -28,7 +28,8 @@
 ' -----------	---	-----	-------------------------------------------------------
 ' 02-18-2015	REM	1.0.0	Initial version
 ' 08-12-2017    REM 1.2.1   Fixes above
-' 02-18-2024    REM 2.0.0   Updated for TSX 10.5, which has a new ImageLink method (InsertWCS) and new InventoryArray functions
+' 02-18-2024    REM 2.0.0   Published for TSX 64. Updated for TSX 10.5, which has a new ImageLink method (InsertWCS) and new InventoryArray functions
+' 02-19-2024    REM 2.0.1   Added analyze loop
 ' ---------------------------------------------------------------------------------
 '
 
@@ -89,7 +90,13 @@ Public Class SeeingProfiler
     Public MaxPix As Integer
 
     Private Sub SeeingAnalyzer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Upon load -- Move along, nothing to see here...
+        'Set all button back colors to PaleGreen to indicate they are ready for use
+        AnalyzeButton.BackColor = Color.PaleGreen
+        LoopButton.BackColor = Color.PaleGreen
+        ReadMeButton.BackColor = Color.PaleGreen
+        NextButton.BackColor = Color.PaleGreen
+        BackButton.BackColor = Color.PaleGreen
+        CloseButton.BackColor = Color.PaleGreen
         Return
     End Sub
 
@@ -110,6 +117,8 @@ Public Class SeeingProfiler
         tsximg = CreateObject("TheSky64.ccdsoftImage")
         tsxilk = CreateObject("TheSky64.ImageLink")
 
+        AnalyzeButton.BackColor = Color.LightCoral
+        Show()
         'Attach to current active image in TSX, if any -- prompt if not
         Try
             ferr = tsximg.AttachToActive()
@@ -231,6 +240,7 @@ Public Class SeeingProfiler
         'Graph 10x10 pixel area of star
         GraphStar(StarSortId)
         'Done
+        AnalyzeButton.BackColor = Color.PaleGreen
         Return
 
     End Sub
@@ -442,4 +452,24 @@ Public Class SeeingProfiler
 
     End Function
 
+    Private Sub LoopButton_Click(sender As Object, e As EventArgs) Handles LoopButton.Click
+        'Continuously re-Analyze the current image in TSX assuming that there is an ongoing imaging sequence,
+        'and that the image is being updated in TSX with new images.
+        'This allows for a continuous update of the seeing conditions as the imaging sequence progresses.
+
+        If (LoopButton.BackColor = Color.PaleGreen) Then
+            Do
+                LoopButton.BackColor = Color.LightCoral
+                AnalyzeButton_Click(sender, e)
+                'keep the other buttons alive by a 1 second sub loop that enables events to be processed, but the main loop is still running for 60 seconds
+                For i = 0 To 59
+                    System.Threading.Thread.Sleep(1000) 'wait 1 second
+                    Application.DoEvents() 'allow other events to be processed)
+                    Show()
+                Next
+            Loop
+        Else
+            LoopButton.BackColor = Color.PaleGreen
+        End If
+    End Sub
 End Class

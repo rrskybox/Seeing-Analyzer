@@ -23,9 +23,9 @@ Partial Class SeeingProfiler
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SeeingProfiler))
         Me.MagChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.NextButton = New System.Windows.Forms.Button()
@@ -48,38 +48,39 @@ Partial Class SeeingProfiler
         Me.XLabel = New System.Windows.Forms.Label()
         Me.YLabel = New System.Windows.Forms.Label()
         Me.MaxADULabel = New System.Windows.Forms.Label()
+        Me.LoopButton = New System.Windows.Forms.Button()
         CType(Me.MagChart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MagChart
         '
         Me.MagChart.BorderlineWidth = 0
-        ChartArea1.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal
-        ChartArea1.Area3DStyle.Enable3D = True
-        ChartArea1.Area3DStyle.IsRightAngleAxes = False
-        ChartArea1.Area3DStyle.Perspective = 10
-        ChartArea1.Area3DStyle.WallWidth = 0
-        ChartArea1.BorderWidth = 0
-        ChartArea1.Name = "ChartArea1"
-        Me.MagChart.ChartAreas.Add(ChartArea1)
-        Legend1.Enabled = False
-        Legend1.Name = "Legend1"
-        Me.MagChart.Legends.Add(Legend1)
+        ChartArea3.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal
+        ChartArea3.Area3DStyle.Enable3D = True
+        ChartArea3.Area3DStyle.IsRightAngleAxes = False
+        ChartArea3.Area3DStyle.Perspective = 10
+        ChartArea3.Area3DStyle.WallWidth = 0
+        ChartArea3.BorderWidth = 0
+        ChartArea3.Name = "ChartArea1"
+        Me.MagChart.ChartAreas.Add(ChartArea3)
+        Legend3.Enabled = False
+        Legend3.Name = "Legend1"
+        Me.MagChart.Legends.Add(Legend3)
         Me.MagChart.Location = New System.Drawing.Point(12, 63)
         Me.MagChart.Name = "MagChart"
         Me.MagChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen
-        Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.MagChart.Series.Add(Series1)
+        Series3.ChartArea = "ChartArea1"
+        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line
+        Series3.Legend = "Legend1"
+        Series3.Name = "Series1"
+        Me.MagChart.Series.Add(Series3)
         Me.MagChart.Size = New System.Drawing.Size(500, 360)
         Me.MagChart.TabIndex = 1
         Me.MagChart.Text = "Magnitude"
         '
         'NextButton
         '
-        Me.NextButton.Location = New System.Drawing.Point(328, 506)
+        Me.NextButton.Location = New System.Drawing.Point(346, 506)
         Me.NextButton.Name = "NextButton"
         Me.NextButton.Size = New System.Drawing.Size(75, 23)
         Me.NextButton.TabIndex = 2
@@ -89,7 +90,7 @@ Partial Class SeeingProfiler
         '
         'BackButton
         '
-        Me.BackButton.Location = New System.Drawing.Point(247, 506)
+        Me.BackButton.Location = New System.Drawing.Point(265, 506)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(75, 23)
         Me.BackButton.TabIndex = 3
@@ -214,7 +215,7 @@ Partial Class SeeingProfiler
         '
         'AnalyzeButton
         '
-        Me.AnalyzeButton.Location = New System.Drawing.Point(137, 506)
+        Me.AnalyzeButton.Location = New System.Drawing.Point(96, 505)
         Me.AnalyzeButton.Name = "AnalyzeButton"
         Me.AnalyzeButton.Size = New System.Drawing.Size(75, 23)
         Me.AnalyzeButton.TabIndex = 0
@@ -276,11 +277,23 @@ Partial Class SeeingProfiler
         Me.AnalysisToolTips.SetToolTip(Me.MaxADULabel, "How far off the TSX Magnitude Zero Point setting is" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "from the value it should hav" &
         "e such that the calculated" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "magnitude value is the same as the cateloged value.")
         '
+        'LoopButton
+        '
+        Me.LoopButton.Location = New System.Drawing.Point(176, 505)
+        Me.LoopButton.Name = "LoopButton"
+        Me.LoopButton.Size = New System.Drawing.Size(75, 23)
+        Me.LoopButton.TabIndex = 22
+        Me.LoopButton.Text = "Loop"
+        Me.AnalysisToolTips.SetToolTip(Me.LoopButton, "Run Image LInk on currently active TSX image, then" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "compute seeing characteristic" &
+        "s and display magnitude" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "graph of starting with star with greatest magnitude.")
+        Me.LoopButton.UseVisualStyleBackColor = True
+        '
         'SeeingProfiler
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(524, 540)
+        Me.Controls.Add(Me.LoopButton)
         Me.Controls.Add(Me.MaxADULabel)
         Me.Controls.Add(Me.YLabel)
         Me.Controls.Add(Me.XLabel)
@@ -302,7 +315,7 @@ Partial Class SeeingProfiler
         Me.Controls.Add(Me.AnalyzeButton)
         Me.Controls.Add(Me.MagChart)
         Me.Name = "SeeingProfiler"
-        Me.Text = "Seeing Analyzer V1.2"
+        Me.Text = "Seeing Analyzer V2.1"
         CType(Me.MagChart, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -329,4 +342,5 @@ Partial Class SeeingProfiler
     Friend WithEvents XLabel As System.Windows.Forms.Label
     Friend WithEvents YLabel As System.Windows.Forms.Label
     Friend WithEvents MaxADULabel As Label
+    Friend WithEvents LoopButton As Button
 End Class
