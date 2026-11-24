@@ -1,4 +1,6 @@
-﻿namespace Seeing_Analyzer
+﻿using System.Drawing;
+
+namespace Seeing_Analyzer
 {
     partial class FormSeeingAnalyzer
     {
@@ -30,15 +32,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSeeingAnalyzer));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.MaxADULabel = new System.Windows.Forms.Label();
             this.YLabel = new System.Windows.Forms.Label();
             this.XLabel = new System.Windows.Forms.Label();
@@ -103,17 +105,17 @@
             this.StarCatMagBox = new System.Windows.Forms.TextBox();
             this.StarInstMagBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.InstLimitingMagBox = new System.Windows.Forms.TextBox();
-            this.CatLimitingMagBox = new System.Windows.Forms.TextBox();
-            this.MeanCatInstMagDeltaBox = new System.Windows.Forms.TextBox();
-            this.MeanCatInstMagRatioBox = new System.Windows.Forms.TextBox();
             this.TargetBox = new System.Windows.Forms.TextBox();
             this.FileTimeBox = new System.Windows.Forms.TextBox();
             this.FileDateBox = new System.Windows.Forms.TextBox();
             this.BackgroundADUBox = new System.Windows.Forms.TextBox();
             this.ExposureBox = new System.Windows.Forms.TextBox();
             this.StarCountBox = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.InstLimitingMagBox = new System.Windows.Forms.TextBox();
+            this.CatLimitingMagBox = new System.Windows.Forms.TextBox();
+            this.MeanCatInstMagDeltaBox = new System.Windows.Forms.TextBox();
+            this.MeanCatInstMagRatioBox = new System.Windows.Forms.TextBox();
             this.PhotometryChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.OpenFitsDialog = new System.Windows.Forms.OpenFileDialog();
             this.SubframeGroupBox = new System.Windows.Forms.GroupBox();
@@ -661,36 +663,36 @@
             // 
             this.StarADUChart.BackColor = System.Drawing.Color.LightCyan;
             this.StarADUChart.BorderlineWidth = 0;
-            chartArea7.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal;
-            chartArea7.Area3DStyle.Enable3D = true;
-            chartArea7.Area3DStyle.IsRightAngleAxes = false;
-            chartArea7.Area3DStyle.Perspective = 10;
-            chartArea7.Area3DStyle.WallWidth = 0;
-            chartArea7.AxisX.Title = "ArcSec";
-            chartArea7.AxisY.Title = "ADU";
-            chartArea7.BorderWidth = 0;
-            chartArea7.Name = "ChartArea1";
-            this.StarADUChart.ChartAreas.Add(chartArea7);
-            legend5.Enabled = false;
-            legend5.Name = "Legend1";
-            this.StarADUChart.Legends.Add(legend5);
+            chartArea1.AlignmentOrientation = System.Windows.Forms.DataVisualization.Charting.AreaAlignmentOrientations.Horizontal;
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Area3DStyle.IsRightAngleAxes = false;
+            chartArea1.Area3DStyle.Perspective = 10;
+            chartArea1.Area3DStyle.WallWidth = 0;
+            chartArea1.AxisX.Title = "ArcSec";
+            chartArea1.AxisY.Title = "ADU";
+            chartArea1.BorderWidth = 0;
+            chartArea1.Name = "ChartArea1";
+            this.StarADUChart.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
+            legend1.Name = "Legend1";
+            this.StarADUChart.Legends.Add(legend1);
             this.StarADUChart.Location = new System.Drawing.Point(198, 147);
             this.StarADUChart.Name = "StarADUChart";
             this.StarADUChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.StarADUChart.Series.Add(series7);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.StarADUChart.Series.Add(series1);
             this.StarADUChart.Size = new System.Drawing.Size(314, 262);
             this.StarADUChart.TabIndex = 41;
             this.StarADUChart.Text = "Magnitude";
-            title3.BackColor = System.Drawing.Color.Transparent;
-            title3.BorderColor = System.Drawing.Color.Black;
-            title3.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title3.Name = "StarGraphTitle";
-            title3.Text = "Star Name";
-            this.StarADUChart.Titles.Add(title3);
+            title1.BackColor = System.Drawing.Color.Transparent;
+            title1.BorderColor = System.Drawing.Color.Black;
+            title1.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "StarGraphTitle";
+            title1.Text = "Star Name";
+            this.StarADUChart.Titles.Add(title1);
             // 
             // groupBox1
             // 
@@ -881,57 +883,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Population Photometry";
             // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.label8);
-            this.groupBox6.Controls.Add(this.label6);
-            this.groupBox6.Controls.Add(this.MeanMInInstMagLabel);
-            this.groupBox6.Controls.Add(this.AvgMagZeroOffsetLabel);
-            this.groupBox6.Controls.Add(this.MeanMinCatMagLabel);
-            this.groupBox6.Controls.Add(this.CoreMagRatioLabel);
-            this.groupBox6.Controls.Add(this.InstLimitingMagBox);
-            this.groupBox6.Controls.Add(this.CatLimitingMagBox);
-            this.groupBox6.Controls.Add(this.MeanCatInstMagDeltaBox);
-            this.groupBox6.Controls.Add(this.MeanCatInstMagRatioBox);
-            this.groupBox6.Location = new System.Drawing.Point(6, 244);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(164, 177);
-            this.groupBox6.TabIndex = 89;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Magnitude Statistics";
-            // 
-            // InstLimitingMagBox
-            // 
-            this.InstLimitingMagBox.Location = new System.Drawing.Point(117, 35);
-            this.InstLimitingMagBox.Name = "InstLimitingMagBox";
-            this.InstLimitingMagBox.Size = new System.Drawing.Size(40, 20);
-            this.InstLimitingMagBox.TabIndex = 77;
-            this.InstLimitingMagBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // CatLimitingMagBox
-            // 
-            this.CatLimitingMagBox.Location = new System.Drawing.Point(117, 59);
-            this.CatLimitingMagBox.Name = "CatLimitingMagBox";
-            this.CatLimitingMagBox.Size = new System.Drawing.Size(40, 20);
-            this.CatLimitingMagBox.TabIndex = 78;
-            this.CatLimitingMagBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // MeanCatInstMagDeltaBox
-            // 
-            this.MeanCatInstMagDeltaBox.Location = new System.Drawing.Point(117, 119);
-            this.MeanCatInstMagDeltaBox.Name = "MeanCatInstMagDeltaBox";
-            this.MeanCatInstMagDeltaBox.Size = new System.Drawing.Size(40, 20);
-            this.MeanCatInstMagDeltaBox.TabIndex = 79;
-            this.MeanCatInstMagDeltaBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // MeanCatInstMagRatioBox
-            // 
-            this.MeanCatInstMagRatioBox.Location = new System.Drawing.Point(117, 144);
-            this.MeanCatInstMagRatioBox.Name = "MeanCatInstMagRatioBox";
-            this.MeanCatInstMagRatioBox.Size = new System.Drawing.Size(41, 20);
-            this.MeanCatInstMagRatioBox.TabIndex = 81;
-            this.MeanCatInstMagRatioBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // TargetBox
             // 
             this.TargetBox.Location = new System.Drawing.Point(66, 19);
@@ -980,24 +931,76 @@
             this.StarCountBox.TabIndex = 75;
             this.StarCountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label8);
+            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Controls.Add(this.MeanMInInstMagLabel);
+            this.groupBox6.Controls.Add(this.AvgMagZeroOffsetLabel);
+            this.groupBox6.Controls.Add(this.MeanMinCatMagLabel);
+            this.groupBox6.Controls.Add(this.CoreMagRatioLabel);
+            this.groupBox6.Controls.Add(this.InstLimitingMagBox);
+            this.groupBox6.Controls.Add(this.CatLimitingMagBox);
+            this.groupBox6.Controls.Add(this.MeanCatInstMagDeltaBox);
+            this.groupBox6.Controls.Add(this.MeanCatInstMagRatioBox);
+            this.groupBox6.ForeColor = System.Drawing.Color.White;
+            this.groupBox6.Location = new System.Drawing.Point(9, 244);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(164, 177);
+            this.groupBox6.TabIndex = 89;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Magnitude Statistics";
+            // 
+            // InstLimitingMagBox
+            // 
+            this.InstLimitingMagBox.Location = new System.Drawing.Point(117, 35);
+            this.InstLimitingMagBox.Name = "InstLimitingMagBox";
+            this.InstLimitingMagBox.Size = new System.Drawing.Size(40, 20);
+            this.InstLimitingMagBox.TabIndex = 77;
+            this.InstLimitingMagBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // CatLimitingMagBox
+            // 
+            this.CatLimitingMagBox.Location = new System.Drawing.Point(117, 59);
+            this.CatLimitingMagBox.Name = "CatLimitingMagBox";
+            this.CatLimitingMagBox.Size = new System.Drawing.Size(40, 20);
+            this.CatLimitingMagBox.TabIndex = 78;
+            this.CatLimitingMagBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // MeanCatInstMagDeltaBox
+            // 
+            this.MeanCatInstMagDeltaBox.Location = new System.Drawing.Point(117, 119);
+            this.MeanCatInstMagDeltaBox.Name = "MeanCatInstMagDeltaBox";
+            this.MeanCatInstMagDeltaBox.Size = new System.Drawing.Size(40, 20);
+            this.MeanCatInstMagDeltaBox.TabIndex = 79;
+            this.MeanCatInstMagDeltaBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // MeanCatInstMagRatioBox
+            // 
+            this.MeanCatInstMagRatioBox.Location = new System.Drawing.Point(117, 144);
+            this.MeanCatInstMagRatioBox.Name = "MeanCatInstMagRatioBox";
+            this.MeanCatInstMagRatioBox.Size = new System.Drawing.Size(41, 20);
+            this.MeanCatInstMagRatioBox.TabIndex = 81;
+            this.MeanCatInstMagRatioBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // PhotometryChart
             // 
             this.PhotometryChart.BackColor = System.Drawing.Color.LightCyan;
-            chartArea8.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea8.AxisX.Title = "Catalog Apparent Magnitude";
-            chartArea8.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea8.AxisY.IsReversed = true;
-            chartArea8.AxisY.Title = "Camera Apparent Magnitude";
-            chartArea8.Name = "ChartArea1";
-            this.PhotometryChart.ChartAreas.Add(chartArea8);
+            chartArea2.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea2.AxisX.Title = "Catalog Apparent Magnitude";
+            chartArea2.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea2.AxisY.IsReversed = true;
+            chartArea2.AxisY.Title = "Camera Apparent Magnitude";
+            chartArea2.Name = "ChartArea1";
+            this.PhotometryChart.ChartAreas.Add(chartArea2);
             this.PhotometryChart.Location = new System.Drawing.Point(198, 427);
             this.PhotometryChart.Name = "PhotometryChart";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series8.IsVisibleInLegend = false;
-            series8.Name = "Relative Mag";
-            series8.YValuesPerPoint = 2;
-            this.PhotometryChart.Series.Add(series8);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series2.IsVisibleInLegend = false;
+            series2.Name = "Relative Mag";
+            series2.YValuesPerPoint = 2;
+            this.PhotometryChart.Series.Add(series2);
             this.PhotometryChart.Size = new System.Drawing.Size(511, 427);
             this.PhotometryChart.TabIndex = 49;
             this.PhotometryChart.Text = "Photometry";
@@ -1433,28 +1436,28 @@
             // VariationGraph
             // 
             this.VariationGraph.BackColor = System.Drawing.Color.LightCyan;
-            chartArea9.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea9.AxisX.IsStartedFromZero = false;
-            chartArea9.AxisX.LabelStyle.Format = "0.0";
-            chartArea9.AxisX.Title = "Magnitude History (Adjusted)";
-            chartArea9.AxisX2.IsStartedFromZero = false;
-            chartArea9.AxisY.IsReversed = true;
-            chartArea9.AxisY.LabelAutoFitMaxFontSize = 8;
-            chartArea9.AxisY.Title = "Sample Date";
-            chartArea9.Name = "VariationChart";
-            this.VariationGraph.ChartAreas.Add(chartArea9);
-            legend6.Enabled = false;
-            legend6.Name = "Legend1";
-            this.VariationGraph.Legends.Add(legend6);
+            chartArea3.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea3.AxisX.IsStartedFromZero = false;
+            chartArea3.AxisX.LabelStyle.Format = "0.0";
+            chartArea3.AxisX.Title = "Magnitude History (Adjusted)";
+            chartArea3.AxisX2.IsStartedFromZero = false;
+            chartArea3.AxisY.IsReversed = true;
+            chartArea3.AxisY.LabelAutoFitMaxFontSize = 8;
+            chartArea3.AxisY.Title = "Sample Date";
+            chartArea3.Name = "VariationChart";
+            this.VariationGraph.ChartAreas.Add(chartArea3);
+            legend2.Enabled = false;
+            legend2.Name = "Legend1";
+            this.VariationGraph.Legends.Add(legend2);
             this.VariationGraph.Location = new System.Drawing.Point(717, 463);
             this.VariationGraph.Name = "VariationGraph";
-            series9.ChartArea = "VariationChart";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
-            series9.Legend = "Legend1";
-            series9.Name = "VariationSeries";
-            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Single;
-            series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            this.VariationGraph.Series.Add(series9);
+            series3.ChartArea = "VariationChart";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastPoint;
+            series3.Legend = "Legend1";
+            series3.Name = "VariationSeries";
+            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Single;
+            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            this.VariationGraph.Series.Add(series3);
             this.VariationGraph.Size = new System.Drawing.Size(325, 391);
             this.VariationGraph.TabIndex = 57;
             this.VariationGraph.Text = "Star Variation";
