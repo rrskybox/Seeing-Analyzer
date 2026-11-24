@@ -1063,6 +1063,12 @@ namespace Seeing_Analyzer
         {
 
         }
+
+        private void CullButton_Click(object sender, EventArgs e)
+        {
+            Starchive sc = new Starchive();
+            sc.ClearPhotometry(photoStar.Name);
+        }
     }
 
 }

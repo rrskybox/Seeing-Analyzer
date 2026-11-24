@@ -105,17 +105,17 @@ namespace Seeing_Analyzer
             this.StarCatMagBox = new System.Windows.Forms.TextBox();
             this.StarInstMagBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.InstLimitingMagBox = new System.Windows.Forms.TextBox();
+            this.CatLimitingMagBox = new System.Windows.Forms.TextBox();
+            this.MeanCatInstMagDeltaBox = new System.Windows.Forms.TextBox();
+            this.MeanCatInstMagRatioBox = new System.Windows.Forms.TextBox();
             this.TargetBox = new System.Windows.Forms.TextBox();
             this.FileTimeBox = new System.Windows.Forms.TextBox();
             this.FileDateBox = new System.Windows.Forms.TextBox();
             this.BackgroundADUBox = new System.Windows.Forms.TextBox();
             this.ExposureBox = new System.Windows.Forms.TextBox();
             this.StarCountBox = new System.Windows.Forms.TextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.InstLimitingMagBox = new System.Windows.Forms.TextBox();
-            this.CatLimitingMagBox = new System.Windows.Forms.TextBox();
-            this.MeanCatInstMagDeltaBox = new System.Windows.Forms.TextBox();
-            this.MeanCatInstMagRatioBox = new System.Windows.Forms.TextBox();
             this.PhotometryChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.OpenFitsDialog = new System.Windows.Forms.OpenFileDialog();
             this.SubframeGroupBox = new System.Windows.Forms.GroupBox();
@@ -159,6 +159,7 @@ namespace Seeing_Analyzer
             this.OpenFileNameBox = new System.Windows.Forms.TextBox();
             this.OverviewButton = new System.Windows.Forms.Button();
             this.OnTopCheckBox = new System.Windows.Forms.CheckBox();
+            this.CullButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.StarADUChart)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.PhotometryGroupBox.SuspendLayout();
@@ -567,7 +568,7 @@ namespace Seeing_Analyzer
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(730, 430);
+            this.label22.Location = new System.Drawing.Point(718, 430);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(26, 13);
             this.label22.TabIndex = 88;
@@ -578,7 +579,7 @@ namespace Seeing_Analyzer
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(944, 430);
+            this.label23.Location = new System.Drawing.Point(917, 430);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(29, 13);
             this.label23.TabIndex = 90;
@@ -883,54 +884,6 @@ namespace Seeing_Analyzer
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Population Photometry";
             // 
-            // TargetBox
-            // 
-            this.TargetBox.Location = new System.Drawing.Point(66, 19);
-            this.TargetBox.Name = "TargetBox";
-            this.TargetBox.Size = new System.Drawing.Size(100, 20);
-            this.TargetBox.TabIndex = 87;
-            this.TargetBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // FileTimeBox
-            // 
-            this.FileTimeBox.Location = new System.Drawing.Point(66, 73);
-            this.FileTimeBox.Name = "FileTimeBox";
-            this.FileTimeBox.Size = new System.Drawing.Size(100, 20);
-            this.FileTimeBox.TabIndex = 85;
-            this.FileTimeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // FileDateBox
-            // 
-            this.FileDateBox.Location = new System.Drawing.Point(66, 46);
-            this.FileDateBox.Name = "FileDateBox";
-            this.FileDateBox.Size = new System.Drawing.Size(100, 20);
-            this.FileDateBox.TabIndex = 83;
-            this.FileDateBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BackgroundADUBox
-            // 
-            this.BackgroundADUBox.Location = new System.Drawing.Point(126, 182);
-            this.BackgroundADUBox.Name = "BackgroundADUBox";
-            this.BackgroundADUBox.Size = new System.Drawing.Size(40, 20);
-            this.BackgroundADUBox.TabIndex = 80;
-            this.BackgroundADUBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ExposureBox
-            // 
-            this.ExposureBox.Location = new System.Drawing.Point(101, 116);
-            this.ExposureBox.Name = "ExposureBox";
-            this.ExposureBox.Size = new System.Drawing.Size(65, 20);
-            this.ExposureBox.TabIndex = 76;
-            this.ExposureBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // StarCountBox
-            // 
-            this.StarCountBox.Location = new System.Drawing.Point(101, 142);
-            this.StarCountBox.Name = "StarCountBox";
-            this.StarCountBox.Size = new System.Drawing.Size(65, 20);
-            this.StarCountBox.TabIndex = 75;
-            this.StarCountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.label8);
@@ -982,6 +935,54 @@ namespace Seeing_Analyzer
             this.MeanCatInstMagRatioBox.Size = new System.Drawing.Size(41, 20);
             this.MeanCatInstMagRatioBox.TabIndex = 81;
             this.MeanCatInstMagRatioBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TargetBox
+            // 
+            this.TargetBox.Location = new System.Drawing.Point(66, 19);
+            this.TargetBox.Name = "TargetBox";
+            this.TargetBox.Size = new System.Drawing.Size(100, 20);
+            this.TargetBox.TabIndex = 87;
+            this.TargetBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // FileTimeBox
+            // 
+            this.FileTimeBox.Location = new System.Drawing.Point(66, 73);
+            this.FileTimeBox.Name = "FileTimeBox";
+            this.FileTimeBox.Size = new System.Drawing.Size(100, 20);
+            this.FileTimeBox.TabIndex = 85;
+            this.FileTimeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // FileDateBox
+            // 
+            this.FileDateBox.Location = new System.Drawing.Point(66, 46);
+            this.FileDateBox.Name = "FileDateBox";
+            this.FileDateBox.Size = new System.Drawing.Size(100, 20);
+            this.FileDateBox.TabIndex = 83;
+            this.FileDateBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BackgroundADUBox
+            // 
+            this.BackgroundADUBox.Location = new System.Drawing.Point(126, 182);
+            this.BackgroundADUBox.Name = "BackgroundADUBox";
+            this.BackgroundADUBox.Size = new System.Drawing.Size(40, 20);
+            this.BackgroundADUBox.TabIndex = 80;
+            this.BackgroundADUBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ExposureBox
+            // 
+            this.ExposureBox.Location = new System.Drawing.Point(101, 116);
+            this.ExposureBox.Name = "ExposureBox";
+            this.ExposureBox.Size = new System.Drawing.Size(65, 20);
+            this.ExposureBox.TabIndex = 76;
+            this.ExposureBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // StarCountBox
+            // 
+            this.StarCountBox.Location = new System.Drawing.Point(101, 142);
+            this.StarCountBox.Name = "StarCountBox";
+            this.StarCountBox.Size = new System.Drawing.Size(65, 20);
+            this.StarCountBox.TabIndex = 75;
+            this.StarCountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // PhotometryChart
             // 
@@ -1464,7 +1465,7 @@ namespace Seeing_Analyzer
             // 
             // PhotoStarBox
             // 
-            this.PhotoStarBox.Location = new System.Drawing.Point(774, 427);
+            this.PhotoStarBox.Location = new System.Drawing.Point(749, 427);
             this.PhotoStarBox.Name = "PhotoStarBox";
             this.PhotoStarBox.Size = new System.Drawing.Size(152, 20);
             this.PhotoStarBox.TabIndex = 89;
@@ -1472,7 +1473,7 @@ namespace Seeing_Analyzer
             // 
             // PhotoFilterBox
             // 
-            this.PhotoFilterBox.Location = new System.Drawing.Point(979, 427);
+            this.PhotoFilterBox.Location = new System.Drawing.Point(952, 427);
             this.PhotoFilterBox.Name = "PhotoFilterBox";
             this.PhotoFilterBox.Size = new System.Drawing.Size(38, 20);
             this.PhotoFilterBox.TabIndex = 91;
@@ -1508,12 +1509,24 @@ namespace Seeing_Analyzer
             this.OnTopCheckBox.UseVisualStyleBackColor = true;
             this.OnTopCheckBox.CheckedChanged += new System.EventHandler(this.OnTopCheckBox_CheckedChanged);
             // 
+            // CullButton
+            // 
+            this.CullButton.ForeColor = System.Drawing.Color.Black;
+            this.CullButton.Location = new System.Drawing.Point(999, 425);
+            this.CullButton.Name = "CullButton";
+            this.CullButton.Size = new System.Drawing.Size(43, 23);
+            this.CullButton.TabIndex = 100;
+            this.CullButton.Text = "Cull";
+            this.CullButton.UseVisualStyleBackColor = true;
+            this.CullButton.Click += new System.EventHandler(this.CullButton_Click);
+            // 
             // FormSeeingAnalyzer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(1059, 873);
+            this.Controls.Add(this.CullButton);
             this.Controls.Add(this.OpenFileNameBox);
             this.Controls.Add(this.OverviewButton);
             this.Controls.Add(this.OnTopCheckBox);
@@ -1688,6 +1701,7 @@ namespace Seeing_Analyzer
         internal System.Windows.Forms.Button OpenFitsButton;
         internal System.Windows.Forms.Button ReadMeButton;
         internal System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.Button CullButton;
     }
 }
 

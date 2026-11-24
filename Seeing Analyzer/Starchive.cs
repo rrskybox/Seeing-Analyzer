@@ -128,6 +128,34 @@ namespace Seeing_Analyzer
             return starList;
         }
 
+        public bool ClearPhotometry(string starName)
+        {
+            //Open file, cull all xml entries that match the criteria, if any, then save the resulting xml back to the file
+
+            List<PhotoData> starList = new List<PhotoData>();
+
+            //Check for file, if doesnt exist, then return
+            if (!File.Exists(starchivePath)) return true;
+
+            XElement starAllXdata = XElement.Load(starchivePath);
+            IEnumerable<XElement> starXlist = starAllXdata.Elements("StarData");
+            foreach (XElement star in starXlist)
+            {
+                string tn = star.Element("StarName").Value;
+                DateTime td = Convert.ToDateTime(star.Element("StarDate").Value);
+                double tMagInst = Convert.ToDouble(star.Element("StarInstMag").Value);
+                string tf = star.Element("StarFilter").Value;
+                double tMagDelta = Convert.ToDouble(star.Element("StarMagDelta").Value);
+                if (tn == starName)
+                {
+                    //PhotoData pd = new PhotoData(tn, td, tf, tMagInst, tMagDelta);
+                    star.Remove();
+                }
+            }
+            starAllXdata.Save(starchivePath);
+            return true;
+        }
+
 
     }
 }
